@@ -10,7 +10,7 @@ body {
 /* navbar */
 nav {
     height: calc(100vh - 70px);
-    width: 200px;
+    min-width: 200px;
     background-color: black;
     padding: 20px 20px 5px 20px;
     color: #a3a3a3;
@@ -142,7 +142,7 @@ main {
 
 main #top {
     height: 65px;
-    width: calc(100% - 180px);
+    width: calc(100% - 200px);
     background-color: black;
     opacity:0.5;
     position: fixed;
@@ -274,11 +274,12 @@ footer #footer-center #player {
 
 footer #footer-center #player a {
     text-decoration: none;
+    font-size: 1.3em;
     color: white;
 }
 
 footer #footer-center #player a:nth-of-type(3) {
-    font-size: 20px;
+    font-size: 2.5em;
 }
 
 footer #footer-center #time {
@@ -358,12 +359,82 @@ RESPONSIVE
     #inside .container-section .container-card .card {
         width: 20%;
     }
+
+    footer #footer-center #time #time-line div:first-child {
+        width: 250px;
+    }
 }
 /* small device */
 @media screen and (max-width:768px) {
 
+    #inside .container-section .container-card .card {
+        width: 48%;
+    }
+
+    footer #footer-left {
+        gap: 10px;
+    }
+
+    footer #footer-left #save {
+        gap: 2px;
+        flex-direction: column;
+    }
+
+    footer #footer-center #time #time-line div:first-child {
+        width: 150px;
+    }
 }
+
+
 /* x-small device */
 @media screen and (max-width:576px) {
-    
+
+    nav {
+        min-width: auto;
+        padding: 10px 10px 5px 10px;
+    }
+
+    nav #nav-top #logo img {
+        width: 25px;
+    }
+
+    nav #nav-top #logo div {
+        display: none;
+    }
+
+    nav #nav-top #nav-menu .menu-item div {
+        display: none;
+    }
+
+    nav #playlist {
+        display: none;
+    }
+
+    nav #nav-bottom #download img {
+        margin: 0 auto;
+    }
+
+    nav #nav-bottom #download div {
+        display: none;
+    }
+
+    nav #nav-bottom hr {
+        display: none;
+    }
+
+    nav #nav-bottom #profile div {
+        display: none;
+    }
+
+    main #top {
+        width: calc(100% - 47px);
+    }
+
+    footer #footer-left {
+        gap: 5px;
+    }
+
+    footer #footer-center #time #time-line div:first-child {
+        width: 100px;
+    }
 }
