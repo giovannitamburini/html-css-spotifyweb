@@ -1,0 +1,41 @@
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    height: calc(100vh - 130px);
+    width: 340px;
+    background-color: black;
+
+}
+
+main {
+    height: calc(100vh - 130px);
+    width: 100%;
+    position: relative;
+    background-color: #141922;
+    overflow-y: auto;
+
+}
+
+#inside {
+    padding-top: 50px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#top {
+    height: 130px;
+    width: 100%;
+    background-color: black;
+    opacity:0.5;
+    position: fixed;
+}
+
+footer {
+    height: 130px;
+    width: 100%;
+    background-color: #282828;
+}
