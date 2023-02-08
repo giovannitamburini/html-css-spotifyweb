@@ -326,6 +326,7 @@ main button:hover {
     text-align: center;
     color: #a3a3a3;
     text-decoration: none;
+    padding-bottom: 1.5em;
 }
 
 #inside .container-section .container-card .card .hover-card {
