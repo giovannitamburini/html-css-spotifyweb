@@ -199,6 +199,10 @@ main {
     overflow-y: auto;
 }
 
+/* scrollbar */
+/* /scrollbar */
+
+
 /* top opacity */
 main #top {
     height: 65px;
@@ -206,6 +210,7 @@ main #top {
     background-color: black;
     opacity:0.5;
     position: fixed;
+    z-index: 1;
 }
 
 main button {
@@ -217,6 +222,7 @@ main button {
     position: fixed;
     top: calc(65px / 2 - 7px * 2);
     right: 25px;
+    z-index: 1;
 }
 /* hover */
 main button:hover {
@@ -263,7 +269,6 @@ main button:hover {
 }
 /* /hover */
 /* /main menu */
-
 
 
 #inside .container-section {
@@ -438,31 +443,46 @@ footer #footer-center #time .seconds {
     color: white;
 }
 
-footer #footer-center #time #time-line {
-    position: relative;
-}
-
-footer #footer-center #time #time-line div:first-child {
+footer #footer-center #time #time-line div {
     height: 3px;
-    width: 300px;
+    width: 400px;
     background-color: #a3a3a3;
     border-radius: 3px;
     position: relative;
 }
 
-footer #footer-center #time #time-line div:last-child {
+footer #footer-center #time #time-line div div {
     height: 3px;
-    width: 100px;
+    width: 30%;
     background-color: white;
     border-radius: 3px;
     position: absolute;
-    top: 0;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+
+footer #footer-center #time #time-line div div .point {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin-right: -4.5px;
+    display: none;
 }
 
 /* hover */
 footer #footer-center #player a:nth-of-type(3):hover {
     font-size: 2.3em;
-    margin:-2px -2px;
+    margin:-2px -1.8px;
+}
+
+footer #footer-center #time #time-line:hover div div {
+    background-color: #1fdf64;
+}
+
+footer #footer-center #time #time-line:hover div div .point {
+    display: block;
+    background-color: white;
 }
 /* /hover */
 /* /footer center */
@@ -483,21 +503,48 @@ footer #footer-right #volume-line {
     position: relative;
 }
 
-footer #footer-right #volume-line div:first-child {
+footer #footer-right #volume-line div {
     height: 3px;
     width: 90px;
     border-radius: 3px;
     background-color:#a3a3a3;
+    position: relative;
 }
 
-footer #footer-right #volume-line div:last-child {
+footer #footer-right #volume-line div div {
     height: 3px;
-    width: 30px;
+    width: 40%;
     border-radius: 3px;
     background-color: white;
     position: absolute;
-    top: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
+
+footer #footer-right #volume-line div div .point {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin-right: -4.5px;
+    background-color: white;
+    display: none;
+}
+
+/* hover */
+footer #footer-right #volume-line:hover div div {
+    background-color: #1fdf64;
+}
+
+footer #footer-right #volume-line:hover div div .point {
+    display: block;
+    background-color: white;
+}
+/* /hover */
+
+/* /footer right */
+
+
 
 /* -----------------------------------------------
 RESPONSIVE
@@ -513,7 +560,7 @@ RESPONSIVE
         width: 20%;
     }
 
-    footer #footer-center #time #time-line div:first-child {
+    footer #footer-center #time #time-line div {
         width: 250px;
     }
 }
@@ -533,8 +580,13 @@ RESPONSIVE
         flex-direction: column;
     }
 
-    footer #footer-center #time #time-line div:first-child {
+    footer #footer-center #time #time-line div {
         width: 150px;
+    }
+
+    footer #footer-right #volume-line div {
+        height: 3px;
+        width: 75px;
     }
 }
 
@@ -610,7 +662,12 @@ RESPONSIVE
         width: 35px;
     }
 
-    footer #footer-center #time #time-line div:first-child {
-        width: 100px;
+    footer #footer-center #time #time-line div {
+        width: 130px;
+    }
+
+    footer #footer-right #volume-line div {
+        height: 3px;
+        width: 60px;
     }
 }
