@@ -23,10 +23,10 @@ body {
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     /* background: #1fdf64; */
-    background: #282828;
+    background: #141922;
 }
-
 /* /srollbar */
+
 
 #container {
     display: flex;
@@ -147,7 +147,7 @@ nav #nav-top #playlist #new-playlist #add {
 }
 
 nav #nav-top #playlist .single-playlist {
-    padding-top: 7px;
+    padding-top: 10px;
 }
 
 nav #nav-top #playlist .single-playlist a {
@@ -172,7 +172,6 @@ nav #nav-top #playlist .single-playlist:hover a{
 
 
 /* navbar bottom */
-
 nav #nav-bottom {
     padding-top: 2em;
 }
@@ -218,6 +217,7 @@ nav #nav-bottom #download:hover {
 }
 /* /hover */
 /* /navbar bottom */
+/* navbar */
 
 
 /* main */
@@ -311,6 +311,7 @@ main button:hover {
 
 #inside .container-section p {
     color: #a3a3a3;
+    padding-top: 1em;
 }
 
 #inside .container-section .container-card {
@@ -320,9 +321,9 @@ main button:hover {
     padding-top: 2em;
 }
 
+
 #inside .container-section .container-card .card {
-    width: 13vw;
-    max-width: 250px;
+    width: calc(100% / 6 - (0.7em / 6 * 5));
     text-align: center;
     color: #a3a3a3;
     text-decoration: none;
@@ -340,7 +341,7 @@ main button:hover {
 }
 
 #inside .container-section .container-card .card h3 {
-    padding: 5px 0 3px 0;
+    padding: 1em 0 0.5em 0;
     color: white;
 }
 
@@ -580,6 +581,7 @@ footer #footer-right #volume-line:hover div div .point {
 /* -----------------------------------------------
 RESPONSIVE
 ----------------------------------------------- */
+
 /* medium device */
 @media screen and (max-width:992px) {
 
@@ -588,18 +590,24 @@ RESPONSIVE
     }
 
     #inside .container-section .container-card .card {
-        width: 20%;
+        width: calc(100% / 4 - (0.7em / 4 * 3));
     }
 
     footer #footer-center #time #time-line div {
         width: 250px;
     }
 }
+
+
 /* small device */
 @media screen and (max-width:768px) {
 
+    #inside .container-section .container-card {
+        gap: 1em;
+    }
+
     #inside .container-section .container-card .card {
-        width: 48%;
+        width: calc(100% / 2 - (1em / 2));
     }
 
     footer #footer-left {
