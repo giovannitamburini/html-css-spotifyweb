@@ -80,28 +80,25 @@ nav #nav-top #nav-menu {
     padding: 18px 0;
 }
 
-nav #nav-top #nav-menu .menu-item,
-nav #nav-top #nav-menu .menu-item:first-child {
+nav #nav-top #nav-menu .menu-item {
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 3px 0;
     color: #a3a3a3;
     text-decoration: none;
-}
-
-nav #nav-top #nav-menu .menu-item #green-line {
     position: relative;
 }
 
-nav #nav-top #nav-menu .menu-item #green-line div {
-    width: 100%;
-    height: 2.5px;
+nav #nav-top #nav-menu .menu-item:hover::before {
+    content: "";
+    position:absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
     background-color: #1fdf64;
-    position: absolute;
-    left: -31px;
-    top: 10px;
-    transform: rotate(90deg)
 }
 
 nav #nav-top #nav-menu .menu-item img {
@@ -121,7 +118,6 @@ nav #nav-top #nav-menu .menu-item:hover {
 
 
 /* sezione playlist */
-
 nav #nav-top #playlist h4 {
     color: white;
 }
@@ -286,13 +282,20 @@ main button:hover {
 #inside #main-menu a {
     text-decoration: none;
     color: #a3a3a3;
+    position: relative;
 }
 
-#inside #main-menu a hr{
-    margin: 3px auto 0 auto;
-    width: 40%;
-    color: #1fdf64; 
+#inside #main-menu a:hover::before {
+    content: "";
+    position:absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #1fdf64;
 }
+
 /* hover */
 #inside #main-menu a:hover {
     color: white;
@@ -485,7 +488,7 @@ footer #footer-center #time #time-line div {
 
 footer #footer-center #time #time-line div div {
     height: 3px;
-    width: 30%;
+    width: 25%;
     background-color: white;
     border-radius: 3px;
     position: absolute;
@@ -510,11 +513,37 @@ footer #footer-center #player a:nth-of-type(3):hover {
 
 footer #footer-center #time #time-line:hover div div {
     background-color: #1fdf64;
+    animation-name: move-1;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-1 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 footer #footer-center #time #time-line:hover div div .point {
     display: block;
     background-color: white;
+    animation-name: move-1-1;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-1-1 {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 400px;
+    }
 }
 /* /hover */
 /* /footer center */
@@ -545,7 +574,7 @@ footer #footer-right #volume-line div {
 
 footer #footer-right #volume-line div div {
     height: 3px;
-    width: 40%;
+    width: 25%;
     border-radius: 3px;
     background-color: white;
     position: absolute;
@@ -566,11 +595,37 @@ footer #footer-right #volume-line div div .point {
 /* hover */
 footer #footer-right #volume-line:hover div div {
     background-color: #1fdf64;
+    animation-name: move-2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-2 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 footer #footer-right #volume-line:hover div div .point {
     display: block;
     background-color: white;
+    animation-name: move-2-2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-2-2 {
+    0% {
+        left:0;
+    }
+
+    100% {
+        left:90px;
+    }
 }
 /* /hover */
 
@@ -595,6 +650,16 @@ RESPONSIVE
 
     footer #footer-center #time #time-line div {
         width: 250px;
+    }
+
+    @keyframes move-1-1 {
+        0% {
+            left: 0;
+        }
+    
+        100% {
+            left: 250px;
+        }
     }
 }
 
@@ -623,9 +688,29 @@ RESPONSIVE
         width: 150px;
     }
 
+    @keyframes move-1-1 {
+        0% {
+            left: 0;
+        }
+    
+        100% {
+            left: 150px;
+        }
+    }
+
     footer #footer-right #volume-line div {
         height: 3px;
         width: 75px;
+    }
+
+    @keyframes move-2-2 {
+        0% {
+            left:0;
+        }
+    
+        100% {
+            left:75px;
+        }
     }
 }
 
@@ -650,14 +735,8 @@ RESPONSIVE
         display: none;
     }
 
-    nav #nav-top #nav-menu .menu-item #green-line {
-        display: block;
-    }
-
-    nav #nav-top #nav-menu .menu-item #green-line div {
-        display: block;
-        left: -21px;
-        top: 10px;
+    nav #nav-top #nav-menu .menu-item:hover::before {
+        left: -10px;
     }
 
     nav #playlist {
@@ -686,7 +765,7 @@ RESPONSIVE
     }
 
     footer {
-        padding: 0 5px;
+        padding: 0 9px;
     }
 
     footer #footer-left {
@@ -705,8 +784,28 @@ RESPONSIVE
         width: 130px;
     }
 
+    @keyframes move-1-1 {
+        0% {
+            left: 0;
+        }
+    
+        100% {
+            left: 130px;
+        }
+    }
+
     footer #footer-right #volume-line div {
         height: 3px;
         width: 60px;
+    }
+
+    @keyframes move-2-2 {
+        0% {
+            left:0;
+        }
+    
+        100% {
+            left:60px;
+        }
     }
 }
