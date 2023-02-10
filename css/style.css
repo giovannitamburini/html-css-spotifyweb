@@ -250,10 +250,10 @@ main button {
     right: 25px;
     z-index: 1;
 }
+
 /* hover */
 main button:hover {
-    font-size: 0.9em;
-    right: 15px;
+    transform: scale(120%);
 }
 /* /hover */
 /* /top opacity */
@@ -507,8 +507,7 @@ footer #footer-center #time #time-line div div .point {
 
 /* hover */
 footer #footer-center #player a:nth-of-type(3):hover {
-    font-size: 2.3em;
-    margin:-2px -1.8px;
+    transform: scale(120%);
 }
 
 footer #footer-center #time #time-line:hover div div {
